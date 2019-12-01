@@ -44,8 +44,8 @@ class Bilayer(mb.Compound):
 
     def __init__(self, lipids, ref_atoms, n_lipids_x=10, n_lipids_y=10,
                  area_per_lipid=1.0, lipid_box=None, spacing_z=None,
-                 solvent=None, solvent_per_lipid=None, n_solvent=None, 
-                 solvent_density=None, solvent_mass=None, tilt=0, 
+                 solvent=None, solvent_per_lipid=None, n_solvent=None,
+                 solvent_density=None, solvent_mass=None, tilt=0,
                  random_seed=12345, mirror=True):
 
         super(Bilayer, self).__init__()
@@ -86,9 +86,9 @@ class Bilayer(mb.Compound):
         if solvent:
             self.solvent = solvent
             if solvent_per_lipid != None:
-                self.n_solvent = (self.n_lipids_x * 
-                                  self.n_lipids_y * 
-                                  solvent_per_lipid)
+                self.n_solvent = (self.n_lipids_x *
+                                  self.n_lipids_y *
+                                  2 * solvent_per_lipid)
             elif n_solvent != None:
                 self.n_solvent = n_solvent
             else:
@@ -144,8 +144,8 @@ class Bilayer(mb.Compound):
         avogadros_number = 6.02e23
         cm_to_nm = 1e7
         solvent_volume = (self.n_solvent *
-                solvent_mass / 
-                avogadros_number / 
+                solvent_mass /
+                avogadros_number /
                 solvent_density *
                 (cm_to_nm ** 3))
         lipid_area = self.n_lipids_x * self.n_lipids_y * self.apl
@@ -160,10 +160,10 @@ class Bilayer(mb.Compound):
                                    solvent_z * 0.5])
 
         # Fill box with solvent
-        solvent_compound = mb.fill_box(compound=self.solvent, 
-                               n_compounds=int(self.n_solvent * 0.5), 
+        solvent_compound = mb.fill_box(compound=self.solvent,
+                               n_compounds=int(self.n_solvent * 0.5),
                                box=solvent_box)
-        
+
         return solvent_compound
 
 
@@ -191,7 +191,7 @@ class Bilayer(mb.Compound):
                 position = self.pattern[random_index]
 
                 # Zero and space in z-direction and tilt
-                new_lipid.rotate(theta=120.0 * int(3.0 * random()) * np.pi / 180.0, 
+                new_lipid.rotate(theta=120.0 * int(3.0 * random()) * np.pi / 180.0,
                         around=[0, 0, 1])
                 new_lipid.rotate(theta=self.tilt, around=self.tilt_about)
                 particles = list(new_lipid.particles())
