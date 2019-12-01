@@ -1,0 +1,7 @@
+#define _FF_CHARMM
+
+#include "./cer.itp"
+#include "./chol.itp"
+#include "./ffa.itp"
+
+#include "./tip3p.itp"
