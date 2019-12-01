@@ -2,9 +2,9 @@
 ; ucer2
 ;
 
-[ moleculetype]
+[ moleculetype ]
 ; name nrexcl
-ucer2 2
+  cer 2
 
 [ atoms ]
 ; nr type resnr residue atom cgnr charge

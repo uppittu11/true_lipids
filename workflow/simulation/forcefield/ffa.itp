@@ -2,9 +2,9 @@
 ; ffa24
 ;
 
-[ moleculetype]
+[ moleculetype ]
 ; name nrexcl
-  ffa24 2
+  ffa 2
 
 [ atoms ]
 ; nr type resnr residue atom cgnr charge

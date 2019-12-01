@@ -1,5 +1,8 @@
 #define _FF_CHARMM
 
+#include "./ffnonbonded.itp"
+#include "./ffbonded.itp"
+
 #include "./cer.itp"
 #include "./chol.itp"
 #include "./ffa.itp"
