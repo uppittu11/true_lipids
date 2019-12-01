@@ -1,0 +1,24 @@
+integrator               = steep	; steepest descent minimization
+emstep			         = .001		; initial stepsize
+nsteps                   = 200000	; max number of minimization steps
+
+nstlist                  = 1		; update neighbor list every step
+ns_type                  = grid		; grid type neighbor list
+pbc                      = xyz		; pbc conditions
+periodic-molecules       = no
+dispcorr                 = no
+
+coulombtype              = PME
+coulomb-modifier         = none
+rcoulomb                 = 1.2
+vdw-type                 = cut-off
+vdw-modifier             = force-switch
+
+; cut-off lengths       
+rlist                    = 1.2
+rvdw-switch              = 1.0
+rvdw                     = 1.2
+fourierspacing           = 0.12
+pme-order                = 4
+ewald-rtol               = 1e-04
+
