@@ -105,3 +105,11 @@ venv.bak/
 
 # vscode
 .vscode/
+
+# GROMACS
+mdout.mdp
+run.tpr
+ener.edr
+md.log
+traj.trr
+traj_comp.xtc
