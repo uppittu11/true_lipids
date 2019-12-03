@@ -77,7 +77,7 @@ class Bilayer(mb.Compound):
         # Z-orientation parameters
         self.tilt = tilt
         if spacing_z:
-            self.spacing = np.array([0, 0, spacing_z])
+            self.spacing = spacing_z
         else:
             self.spacing = max([lipid[0].boundingbox.lengths[2]
                 for lipid in self.lipids]) * np.cos(self.tilt)
@@ -193,7 +193,10 @@ class Bilayer(mb.Compound):
                 # Zero and space in z-direction and tilt
                 new_lipid.rotate(theta=120.0 * int(3.0 * random()) * np.pi / 180.0,
                         around=[0, 0, 1])
-                new_lipid.rotate(theta=self.tilt, around=self.tilt_about)
+                if flip_orientation == True:
+                    new_lipid.rotate(theta=-self.tilt, around=self.tilt_about)
+                else:
+                    new_lipid.rotate(theta=self.tilt, around=self.tilt_about)
                 particles = list(new_lipid.particles())
                 ref_atom = self.ref_atoms[n_type]
                 new_lipid.translate(-particles[ref_atom].pos + self.spacing)
