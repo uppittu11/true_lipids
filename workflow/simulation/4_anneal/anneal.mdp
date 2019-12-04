@@ -54,7 +54,7 @@ ref-p                    = 1.01325 1.01325
 gen_vel                  = no
 
 annealing                = single single
-annealing-npoints        = 7 7
-annealing-time           = 0 5000 10000 15000 20000 25000 50000 0 5000 10000 15000 20000 25000 50000
-annealing-temp           = 380 305 380 308 380 305 305 380 305 380 308 380 305 305
+annealing-npoints        = 5 5
+annealing-time           = 0 10000 20000 25000 50000 0 10000 20000 25000 50000 
+annealing-temp           = 305 340 340 305 305 305 340 340 305 305
 
