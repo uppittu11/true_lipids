@@ -1,4 +1,4 @@
-# BioSimWorkflow
+# true-lipids
 
 An example of a TRUE workflow for a biological system {insert DOI}. 
 
