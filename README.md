@@ -1,4 +1,4 @@
-# true-lipids
+# true_lipids
 
 An example of a TRUE workflow for a biological system {insert DOI}. 
 
@@ -6,7 +6,7 @@ This example walks through the setup and simulation of a lipid bilayer consistin
 
 To get started open up the main notebook by executing the following command in the terminal:
 ```bash
-jupyter-notebook workflow/BioSimWorkflow.ipynb
+jupyter-notebook workflow/true_lipids.ipynb
 ```
 
 Make sure you have `anaconda` and `jupyter` installed on your computer. You can download Anaconda [here](https://www.anaconda.com/distribution/).
